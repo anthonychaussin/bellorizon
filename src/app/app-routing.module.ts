@@ -5,7 +5,10 @@ const routes: Routes = [
   {path: '', loadChildren: () => import('./pages/home/home.module').then((m) => m.HomeModule)},
   {path: 'bellorizon-news', loadChildren: () => import('./pages/news/news.module').then((m) => m.NewsModule)},
   {path: 'artisants', loadChildren: () => import('./pages/artisants/artisants.module').then((m) => m.ArtisantsModule)},
-  {path: 'les-bon-plans', loadChildren: () => import('./pages/bon-plans/bon-plans.module').then((m) => m.BonPlansModule)},
+  {
+    path: 'les-bon-plans',
+    loadChildren: () => import('./pages/bon-plans/bon-plans.module').then((m) => m.BonPlansModule)
+  },
   {path: 'login', loadChildren: () => import('./pages/login/login.module').then((m) => m.LoginModule)},
   {path: 'register', loadChildren: () => import('./pages/register/register.module').then((m) => m.RegisterModule)},
 ];
