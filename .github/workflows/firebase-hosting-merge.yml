@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@master
         with:
-          node-version: '18'
+          node-version: '16'
       - run: node server.js
         env:
           ENVFILE: "${{secrets.ENVFILE}}"
