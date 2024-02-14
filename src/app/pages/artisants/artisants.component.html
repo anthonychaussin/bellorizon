@@ -1,0 +1,48 @@
+<div id="wrap" class="oe_structure oe_empty">
+  <section class="s_text_block o_cc o_cc4 pt80 pb80 o_colored_level" data-snippet="s_text_block"
+           data-name="Texte" style="background-image: none;">
+    <div class="o_we_shape o_web_editor_Airy_13_001"></div>
+    <div class="container s_allow_columns">
+      <h2 style="text-align: center;">Les artisants</h2>
+    </div>
+  </section>
+  <section class="s_text_block pt40 pb40 o_cc o_cc2 o_colored_level" data-snippet="s_text_block" data-name="Texte"
+           style="background-image: none;">
+    <div class="s_allow_columns o_container_small">
+      <p>Retrouver ici la liste des professionnels qui pourront vous être utiles et leurs contacts</p>
+      <p>Pour rappel, certaines réserves ne seront pas prises en compte après la
+        livraison, notamment :</p>
+      <p>- Vitrage rayé- Réserves de peinture- Carrelage ou faïence rayé ou cassé- Baignoire ou receveur
+        de douche rayé.
+
+
+      </p></div>
+  </section>
+  <section class="s_three_columns o_cc o_cc2 pt32 pb32 o_colored_level" data-vcss="001"
+           data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Airy/12_001&quot;,&quot;flip&quot;:[]}"
+           data-snippet="s_three_columns" data-name="Colonnes" style="background-image: none;">
+    <div class="o_we_shape o_web_editor_Airy_12_001"></div>
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-center">
+        <ng-container *ngFor="let d of contactData">
+        <div *ngIf="d.name" class="card text-bg-white mt-3 ms-3" style="width: 24rem;">
+            <div class="d-flex" style="height: 420px;">
+              <img ngSrc="assets/img/artisants/{{d.name}}.{{d.svg ? 'svg' : 'webp'}}" alt="{{d.name}} logo" class="card-img-top img img-fluid o_we_custom_image m-auto"
+                 style="padding: 32px !important;" width="690" height="690" loading="lazy"/>
+            </div>
+            <div class="card-body d-flex" style="flex-direction: column">
+              <h3 class="card-title">{{ d.title }}</h3>
+              <div class="d-flex" style="flex-direction: column; justify-content: space-between;flex: auto">
+                <p class="card-text">{{ d.name }} - <a *ngIf="d.web" href="https://{{(d.nameWeb ? d.nameWeb : d.web)}}">{{d.web}}</a></p>
+                <p class="card-text">
+                  <ng-container *ngFor="let mail of d.mails"><a href="mailto:{{mail}}">{{mail}}</a><br></ng-container>
+                </p>
+                <p><a href="tel:{{d.tel}}">{{d.tel}}</a></p>
+              </div>
+            </div>
+        </div>
+        </ng-container>
+      </div>
+    </div>
+  </section>
+</div>
