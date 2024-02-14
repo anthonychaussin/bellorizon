@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: add env file
         env:
           ENVCONTENT: ${{ENVFILE}}
       - run: echo $ENVCONTENT > src/app/environement/env.ts && npm ci && npm run build
