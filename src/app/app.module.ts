@@ -12,7 +12,7 @@ import {getAuth, provideAuth} from "@angular/fire/auth";
 import {getStorage, provideStorage} from "@angular/fire/storage";
 import {getDatabase, provideDatabase} from "@angular/fire/database";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {environment} from "./environement/env";
+import {environment} from "../environement/env";
 
 @NgModule({
   declarations: [
