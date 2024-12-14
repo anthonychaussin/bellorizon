@@ -1,16 +1,22 @@
 import {NgForOf, NgOptimizedImage} from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {
   IonButtons,
   IonCard,
   IonCardContent,
   IonCardHeader,
-  IonCardTitle, IonCol,
-  IonContent, IonGrid, IonHeader,
+  IonCardTitle,
+  IonCol,
+  IonContent,
+  IonGrid,
+  IonHeader,
   IonIcon,
   IonItem,
-  IonLabel, IonList,
-  IonMenuButton, IonRow, IonTitle, IonToolbar
+  IonLabel,
+  IonMenuButton,
+  IonRow,
+  IonTitle,
+  IonToolbar
 } from '@ionic/angular/standalone';
 import {addIcons} from 'ionicons';
 import {arrowDown, arrowUp, wifi} from 'ionicons/icons';
@@ -35,7 +41,6 @@ import {arrowDown, arrowUp, wifi} from 'ionicons/icons';
                IonToolbar,
                IonHeader,
                NgOptimizedImage,
-               IonList,
                IonGrid,
                IonRow,
                IonCol,

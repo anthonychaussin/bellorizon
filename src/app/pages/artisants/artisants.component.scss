@@ -1,0 +1,18 @@
+.card-image {
+  height     : 200px;
+  margin : auto;
+  max-width  : 100%;
+  object-fit : scale-down;
+}
+
+.list {
+  height   : 80vh;
+  position : fixed;
+  width    : 100%;
+}
+
+.inner-list {
+  display         : flex;
+  flex-wrap       : wrap;
+  justify-content : center;
+}
