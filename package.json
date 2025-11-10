@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^20.2.0",
-    "@angular/cli": "^20.3.8",
+    "@angular/cli": "^20.3.9",
     "@angular/compiler-cli": "^20.3.9",
     "@ionic/angular-toolkit": "latest",
     "@types/jasmine": "~5.1.12",
