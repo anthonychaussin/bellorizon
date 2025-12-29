@@ -1,42 +1,30 @@
 {
   "name": "bellhorizon",
-  "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
-  },
+  "version": "1.0.0",
   "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --open",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "echo \"No lint step configured\"",
+    "deploy": "npm run build && firebase deploy"
+  },
   "dependencies": {
-    "@angular/animations": "^20.3.9",
-    "@angular/common": "^20.2.1",
-    "@angular/compiler": "^20.2.1",
-    "@angular/core": "^20.3.9",
-    "@angular/fire": "^20.0.1",
-    "@angular/forms": "^20.3.9",
-    "@angular/platform-browser": "^20.2.1",
-    "@angular/platform-browser-dynamic": "^20.3.9",
-    "@angular/router": "^20.3.9",
-    "@ionic/angular": "^8.7.8",
-    "ionicons": "^8.0.13",
-    "rxjs": "~7.8.2",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.15.1"
+    "primeflex": "^4.0.0",
+    "primeicons": "^7.0.0",
+    "primereact": "^10.8.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-helmet-async": "^2.0.5",
+    "react-router-dom": "^6.26.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^20.2.0",
-    "@angular/cli": "^20.3.8",
-    "@angular/compiler-cli": "^20.3.9",
-    "@ionic/angular-toolkit": "latest",
-    "@types/jasmine": "~5.1.12",
-    "jasmine-core": "~5.12.1",
-    "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.9.2"
+    "@types/node": "^25.0.3",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "~5.6.3",
+    "vite": "^5.4.10"
   }
 }

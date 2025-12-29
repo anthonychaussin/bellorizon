@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /login
+Disallow: /register
+Disallow: /report
+
+# Sitemap
+Sitemap: https://bellorizon.ovh/sitemap.xml
+
