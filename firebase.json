@@ -1,19 +1,36 @@
 {
-  "dataconnect": {
-    "source": "dataconnect"
-  },
   "hosting": {
-    "public": "dist/bellhorizon/browser",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "/sitemap.xml",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/xml; charset=utf-8"
+          }
+        ]
+      },
+      {
+        "source": "/robots.txt",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain; charset=utf-8"
+          }
+        ]
+      }
     ]
-  },
-  "remoteconfig": {
-    "template": "remoteconfig.template.json"
-  },
-  "database": {
-    "rules": "database.rules.json"
   }
 }
