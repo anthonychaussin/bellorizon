@@ -190,9 +190,22 @@ const CommunePage = () => {
     <>
       <SEO
         title="Jonzier-Épagny - La commune"
-        description="Présentation de la commune de Jonzier-Épagny, située en Haute-Savoie dans la région Auvergne-Rhône-Alpes."
-        keywords="Jonzier-Épagny, commune, Haute-Savoie, Genevois, Auvergne-Rhône-Alpes"
+        description="Informations sur la commune de Jonzier-Épagny (74520) : vie locale, services, accès et repères du Genevois en Haute-Savoie."
+        keywords="Jonzier-Épagny, commune 74520, Haute-Savoie, Genevois, Auvergne-Rhône-Alpes, services, vie locale, accès"
         url="/commune"
+        includeResidenceSchema={false}
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'AdministrativeArea',
+          name: 'Jonzier-Épagny',
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Jonzier-Épagny',
+            postalCode: '74520',
+            addressCountry: 'FR'
+          },
+          url: 'https://bellorizon.ovh/commune'
+        }}
       />
       <main className="page p-3">
         <header>

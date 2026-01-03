@@ -8,6 +8,8 @@ interface SEOProps {
   url?: string;
   type?: string;
   noindex?: boolean;
+  includeResidenceSchema?: boolean;
+  structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
 const SEO = ({
@@ -17,11 +19,18 @@ const SEO = ({
                image = '/picture/belhorizon.jpg',
                url = 'https://bellorizon.ovh',
                type = 'website',
-               noindex = false
+               noindex = false,
+               includeResidenceSchema = true,
+               structuredData
              }: SEOProps) => {
-  const fullTitle = title.includes('Résidence Bellôrizon') ? title : `${title} | Résidence Bellhorizon`;
+  const fullTitle = title.includes('Résidence Bellôrizon') ? title : `${title} | Résidence Bellôrizon`;
   const fullUrl = url.startsWith('http') ? url : `https://bellorizon.ovh${url}`;
   const fullImage = image.startsWith('http') ? image : `https://bellorizon.ovh${image}`;
+  const extraStructuredData = Array.isArray(structuredData)
+                              ? structuredData
+                              : structuredData
+                                ? [structuredData]
+                                : [];
 
   return (
     <Helmet>
@@ -51,34 +60,35 @@ const SEO = ({
       {/* Canonical URL */}
       <link rel="canonical" href={fullUrl}/>
 
-      {/* Structured Data - Residence */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-                          '@context': 'https://schema.org',
-                          '@type': 'Residence',
-                          name: 'Résidence Bellôrizon',
-                          description: description,
-                          address: {
-                            '@type': 'PostalAddress',
-                            addressLocality: 'Jonzier-Épagny',
-                            addressCountry: 'FR'
-                          },
-                          url: fullUrl,
-                          image: fullImage,
-                          contactPoint: {
-                            '@type': 'ContactPoint',
-                            email: 'syndic.bellhorizon@gmail.com',
-                            contactType: 'Conseil syndical'
-                          }
-                        })}
-      </script>
+      {includeResidenceSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify({
+                            '@context': 'https://schema.org',
+                            '@type': 'Residence',
+                            name: 'Résidence Bellôrizon',
+                            description: description,
+                            address: {
+                              '@type': 'PostalAddress',
+                              addressLocality: 'Jonzier-Épagny',
+                              addressCountry: 'FR'
+                            },
+                            url: fullUrl,
+                            image: fullImage,
+                            contactPoint: {
+                              '@type': 'ContactPoint',
+                              email: 'syndic.bellhorizon@gmail.com',
+                              contactType: 'Conseil syndical'
+                            }
+                          })}
+        </script>
+      )}
 
       {/* Structured Data - WebSite */}
       <script type="application/ld+json">
         {JSON.stringify({
                           '@context': 'https://schema.org',
                           '@type': 'WebSite',
-                          name: 'Résidence Bellorizon',
+                          name: 'Résidence Bellôrizon',
                           url: 'https://bellorizon.ovh',
                           potentialAction: {
                             '@type': 'SearchAction',
@@ -90,6 +100,11 @@ const SEO = ({
                           }
                         })}
       </script>
+      {extraStructuredData.map((data, index) => (
+        <script key={`ld-${index}`} type="application/ld+json">
+          {JSON.stringify(data)}
+        </script>
+      ))}
     </Helmet>
   );
 };

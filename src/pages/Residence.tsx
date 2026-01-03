@@ -62,8 +62,9 @@ const ResidencePage = () => {
     <>
       <SEO
         title="Résidence Bellôrizon - La résidence"
-        description="Présentation de la Résidence Bellôrizon et de ses équipements."
-        keywords="résidence, Bellôrizon, Jonzier-Épagny, équipements, services"
+        description="Présentation de la Résidence Bellôrizon à Jonzier-Épagny : équipements, parties communes, stationnement, DPE et fibre optique."
+        keywords="Résidence Bellôrizon, Jonzier-Épagny, équipements, parties communes, stationnement, DPE, fibre optique"
+        image="/ressources/img/residence.webp"
         url="/residence"
       />
       <main className="page p-3">
