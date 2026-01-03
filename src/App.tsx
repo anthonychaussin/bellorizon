@@ -8,11 +8,13 @@ import {useMemo, useState} from 'react';
 import {Navigate, Route, Routes, useNavigate} from 'react-router-dom';
 import SiteFooter from './components/SiteFooter';
 import ArtisansPage from './pages/Artisans';
+import CommunePage from './pages/Commune';
 import HomePage from './pages/Home';
 import LoginPage from './pages/Login';
 import NewsPage from './pages/News';
 import RegisterPage from './pages/Register';
 import ReportPage from './pages/Report';
+import ResidencePage from './pages/Residence';
 
 function App() {
   const [menuVisible, setMenuVisible] = useState(false);
@@ -85,6 +87,8 @@ function App() {
       <main className="content">
         <Routes>
           <Route path="/" element={<HomePage/>}/>
+          <Route path="/commune" element={<CommunePage/>}/>
+          <Route path="/residence" element={<ResidencePage/>}/>
           <Route path="/news" element={<NewsPage/>}/>
           <Route path="/artisans" element={<ArtisansPage/>}/>
           <Route path="/report" element={<ReportPage/>}/>

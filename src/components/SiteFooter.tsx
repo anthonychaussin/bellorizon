@@ -6,7 +6,7 @@ const SiteFooter = () => {
   const navigate = useNavigate();
 
   return (
-    <footer className="site-footer">
+    <footer className="">
       <Card>
         <div className="grid align-items-center justify-content-center footer-actions">
           <div className="col-12 md:col-6 text-center">

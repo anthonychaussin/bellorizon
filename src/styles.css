@@ -46,6 +46,16 @@ body {
   padding : 0;
 }
 
+.hero-card .p-image {
+  display : block;
+  margin  : 0 auto;
+}
+
+.hero-card .p-image img {
+  display : block;
+  margin  : 0 auto;
+}
+
 .debit-card {
   background : var(--surface-card);
   border     : 2px solid var(--primary-color);
